@@ -37,19 +37,19 @@ const Navbar = () => {
 
   const menuItems = [
     {
-      label: language === "ID" ? "Wisata" : "Tourism",
-      path: "/wisata",
+      label: language === "ID" ? "Beranda" : "Home",
+      path: "/",
       icon: <FiMap />,
     },
     {
-      label: language === "ID" ? "Kuliner" : "Culinary",
-      path: "/kuliner",
+      label: language === "ID" ? "Ilmuwan" : "scientist",
+      path: "/ilmuwan",
       icon: <FiCoffee />,
     },
     {
-      label: language === "ID" ? "UMKM" : "Businesses",
-      path: "/umkm",
-      icon: <FiShoppingBag />,
+      label: language === "ID" ? "museum" : "museum",
+      path: "/maps",
+      icon: <FiMap />,
     },
     {
       label: language === "ID" ? "Artikel" : "Articles",

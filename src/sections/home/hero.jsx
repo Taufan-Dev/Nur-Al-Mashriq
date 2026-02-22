@@ -34,7 +34,7 @@ function Hero() {
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1664346582394-1f38bdb31d02?auto=format&fit=crop&w=2000&q=80')",
-          transform: `translateY(${offset * 0.3}px)`,
+          transform: `translateY(${offset * 0.2}px)`,
         }}
       />
 

@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
 
 import Home from "./views/home";
+import MuseumDetail from "./pages/MuseumDetail";
+import Maps from "./views/maps";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       {/* ROUTES */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/maps" element={<Maps />} />
+        <Route path="/museum/:id" element={<MuseumDetail />} />
       </Routes>
     </>
   );
