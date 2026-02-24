@@ -6,7 +6,7 @@ export const locations = [
         description: "Dirancang oleh arsitek legendaris I.M. Pei. Koleksinya mencakup manuskrip, keramik, tekstil, dan kaligrafi dari 3 benua.",
         imageUrl: "https://idsb.tmgrup.com.tr/ly/uploads/images/2022/05/17/206089.jpg",
         readMoreUrl: "https://mia.org.qa/",
-        panoramaUrl: "https://cloudflare2.360gigapixels.com/pano/fariborz-alagheband/00404660_Islamic_Art_Museum2.jpg/equirect_crop_3_1/6.jpg" // Using Pannellum's free sample equirectangular image for all right now
+        panoramaUrl: "https://l13.alamy.com/360/PTT36R/museum-of-islamic-art-building-PTT36R.jpg" // Using Pannellum's free sample equirectangular image for all right now
     },
     {
         id: 2,
@@ -24,16 +24,16 @@ export const locations = [
         description: "Terkenal dengan koleksi karpet Utsmani dan manuskrip langka.",
         imageUrl: "https://istanbultourstudio.s3.amazonaws.com/uploads/media_content/picture/7/medium_istanbul_turkish_and_islamic_arts_interior.jpg",
         readMoreUrl: "https://muze.gen.tr/muze-detay/tiem",
-        panoramaUrl: "https://cloudflare1.360gigapixels.com/pano/bodrov/02020192_Nobel-museum-tif/equirect_crop_3_1/4.jpg"
+        panoramaUrl: "https://i0.wp.com/asia-archive.si.edu/wp-content/uploads/2017/11/quran-banner-TIEM_2a.jpg?resize=2555%2C1095&ssl=1"
     },
     {
         id: 4,
         name: "Islamic Arts Museum Malaysia",
         position: [3.1417, 101.6896],
         description: "Museum seni Islam terbesar di Asia Tenggara.",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Art_using_calligraphy_at_the_Islamic_Arts_Museum_Malaysia_%2818974180772%29.jpg/3680px-Art_using_calligraphy_at_the_Islamic_Arts_Museum_Malaysia_%2818974180772%29.jpg",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/88/Islamic_Arts_Museum_Malaysia_Exterior_%28May_2022%29_-_img_02.jpg",
         readMoreUrl: "https://iamm.org.my/",
-        panoramaUrl: "https://cloudflare1.360gigapixels.com/pano/orlov/01933708_DSC01468Z_Panorama.jpg/equirect_crop_3_1/6.jpg"
+        panoramaUrl: "https://cdn.360stories.com/uploads/thumbnails/places/1572956899f4d8f702eed4ca159ab58458ff97ca03.jpeg"
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ export const locations = [
         description: "Memiliki koleksi seni Islam dan Timur Tengah yang sangat kaya.",
         imageUrl: "https://islamicworld.britishmuseum.org/static/hero-168ee5f1a48f6e7fc9c30dc2a35d45a2-53040.png",
         readMoreUrl: "https://www.britishmuseum.org/",
-        panoramaUrl: "https://pannellum.org/images/bma-0.jpg"
+        panoramaUrl: "https://l13.alamy.com/360/PMX8P4/british-museum-london-main-hall-PMX8P4.jpg"
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ export const locations = [
         description: "Sayap seni Islamnya sangat terkenal dengan rekonstruksi halaman Andalusia.",
         imageUrl: "https://gdb.rferl.org/c9e41c84-d829-4c2d-8223-dd789ca7e949_w1080_h608_s.jpg",
         readMoreUrl: "https://www.metmuseum.org/about-the-met/collection-areas/islamic-art",
-        panoramaUrl: "https://pannellum.org/images/alma.jpg"
+        panoramaUrl: "https://i.ytimg.com/vi/OTsqUNGFYlM/maxresdefault.jpg"
     },
     {
         id: 7,
@@ -60,7 +60,7 @@ export const locations = [
         description: "Menampilkan seni dekoratif Islam khas Maroko.",
         imageUrl: "https://d397xw3titc834.cloudfront.net/images/original/6/ba/6ba3900e8de27602218d7f2a80c25b06.jpg",
         readMoreUrl: "https://www.visitmorocco.com/",
-        panoramaUrl: "https://pannellum.org/images/cerro-toco-0.jpg"
+        panoramaUrl: "https://gc.360-data.com/tours/KJLNuwBHb/KJLNuwBHb-HXE_bsemrIJj-scene.jpg"
     },
     {
         id: 8,
@@ -69,7 +69,7 @@ export const locations = [
         description: "Menampilkan sains, astronomi, dan kontribusi ilmuwan Muslim.",
         imageUrl: "https://blog.visitsharjah.com/hubfs/Astrolabes-sim.jpg",
         readMoreUrl: "https://www.sharjahmuseums.ae/",
-        panoramaUrl: "https://pannellum.org/images/alma.jpg"
+        panoramaUrl: "https://l13.alamy.com/360/PMHG78/sharjah-museum-of-islamic-civilization-PMHG78.jpg"
     },
     {
         id: 9,
@@ -78,6 +78,6 @@ export const locations = [
         description: "Memiliki koleksi seni Islam penting termasuk fasad Mshatta.",
         imageUrl: "https://universes.art/fileadmin/_processed_/3/2/csm_26-IMG_9284-A_60c0a8e013.jpg",
         readMoreUrl: "https://www.smb.museum/en/museums-institutions/pergamonmuseum/home/",
-        panoramaUrl: "https://pannellum.org/images/bma-0.jpg"
+        panoramaUrl: "https://st.depositphotos.com/1077338/3434/i/950/depositphotos_34342363-stock-photo-carpet-hall-of-islamic-art.jpg"
     }
 ];

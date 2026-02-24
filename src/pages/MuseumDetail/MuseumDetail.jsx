@@ -7,22 +7,6 @@ const MuseumDetail = () => {
   const museumId = parseInt(id, 10);
   const location = locations.find((loc) => loc.id === museumId);
 
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  // Scroll Progress
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   // Scroll to top when change id
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -71,12 +55,6 @@ const MuseumDetail = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 pb-20 relative">
-      {/* Progress Bar */}
-      <div
-        className="fixed top-0 left-0 h-1.5 bg-indigo-600 z-50 transition-all duration-150"
-        style={{ width: `${scrollProgress}%` }}
-      ></div>
-
       {/* Header */}
       <header className="p-6">
         <Link
@@ -91,26 +69,49 @@ const MuseumDetail = () => {
       <section className="max-w-6xl mx-auto px-6 py-10">
         <h1 className="text-4xl font-bold mb-4">{location.name}</h1>
 
-        <p className="text-gray-600 mb-6">{location.description}</p>
+        <p className="text-gray-700 text-lg leading-relaxed mb-10">
+          {location.description}
+        </p>
 
-        <img
-          src={location.imageUrl}
-          alt={location.name}
-          className="w-full rounded-xl shadow-md mb-10"
-        />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10 animate-fade-in">
+          {/* Gambar Utama (Kiri) */}
+          <div className="w-full h-full">
+            <img
+              src={location.imageUrl}
+              alt={location.name}
+              className="w-full h-full object-cover rounded-xl shadow-md"
+            />
+          </div>
+
+          {/* Grid 2x2 Gambar Kecil (Kanan) */}
+          <div className="grid grid-cols-2 gap-4">
+            {(location.gallery || [
+              "https://images.unsplash.com/photo-1541832069-e6ce2eb87af7?auto=format&fit=crop&q=80&w=400&h=400",
+              "https://images.unsplash.com/photo-1582561424760-00b84df4dd88?auto=format&fit=crop&q=80&w=400&h=400",
+              "https://images.unsplash.com/photo-1574359422045-814ae396dfc8?auto=format&fit=crop&q=80&w=400&h=400",
+              "https://images.unsplash.com/photo-1604871000636-074fa5117945?auto=format&fit=crop&q=80&w=400&h=400"
+            ]).slice(0, 4).map((imgSrc, index) => (
+              <img
+                key={index}
+                src={imgSrc}
+                alt={`${location.name} - Galeri ${index + 1}`}
+                className="w-full aspect-square object-cover rounded-xl shadow-md bg-gray-200"
+              />
+            ))}
+          </div>
+        </div>
 
         {location.panoramaUrl && (
-          <>
-            <h2 className="text-2xl font-bold mb-6">Tur Virtual 360°</h2>
-
-            <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-xl border">
+          <div className="mt-12">
+            <h2 className="text-3xl font-bold mb-6">Tur Virtual 360°</h2>
+            <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-xl border bg-gray-900">
               <div id="panorama-viewer" className="w-full h-full"></div>
 
-              <div className="absolute top-4 right-4 bg-black/60 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">
-                Geser untuk melihat sekeliling
+              <div className="absolute top-4 right-4 bg-black/60 text-white text-xs px-4 py-2 rounded-full backdrop-blur-sm shadow-lg border border-white/10 flex items-center gap-2">
+                <span>🖐️</span> Geser untuk melihat sekeliling
               </div>
             </div>
-          </>
+          </div>
         )}
       </section>
     </div>
