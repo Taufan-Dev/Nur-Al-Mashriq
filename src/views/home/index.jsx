@@ -1,32 +1,12 @@
-import Hero from "../../sections/home/hero";
-
+import Hero from "../../sections/home/hero/hero";
+import Cta from "../../sections/home/cta/cta";
+import ListArtikel from "../../sections/home/listArtikel/listArtikel";
 function Home() {
   return (
     <>
       <Hero />
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
-      <p>snak</p>
+      <ListArtikel />
+      <Cta />
     </>
   );
 }
