@@ -12,6 +12,7 @@ import L from "leaflet";
 
 import { locations } from "../../data/locations";
 import { MAP_CENTER, MAP_ZOOM_LEVEL } from "../../utils/constants";
+import MapPopupCard from "./MapPopupCard";
 
 /* =========================
    FIX ICON BUG VITE
@@ -80,53 +81,12 @@ const InteractiveMap = () => {
             position={location.position}
             icon={createCustomIcon(location.imageUrl)}
           >
-            <Popup>
-              <div style={{ width: "200px" }}>
-                <img
-                  src={location.imageUrl}
-                  alt={location.name}
-                  style={{
-                    width: "100%",
-                    height: "120px",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                  }}
-                />
-
-                <h3
-                  style={{
-                    fontWeight: "bold",
-                    marginTop: "10px",
-                  }}
-                >
-                  {location.name}
-                </h3>
-
-                <p
-                  style={{
-                    fontSize: "13px",
-                    marginTop: "5px",
-                  }}
-                >
-                  {location.description.substring(0, 80)}...
-                </p>
-
-                <Link
-                  to={`/museum/${location.id}`}
-                  style={{
-                    display: "inline-block",
-                    marginTop: "10px",
-                    padding: "6px 10px",
-                    backgroundColor: "#4f46e5",
-                    color: "white",
-                    borderRadius: "6px",
-                    textDecoration: "none",
-                    fontSize: "12px",
-                  }}
-                >
-                  Baca Selengkapnya
-                </Link>
-              </div>
+            <Popup
+              className="custom-popup"
+              minWidth={300}
+              maxWidth={300}
+            >
+              <MapPopupCard location={location} />
             </Popup>
           </Marker>
         ))}
