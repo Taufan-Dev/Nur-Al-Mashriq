@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { locations } from "../../data/locations";
+import { HeroRecommendations } from "../../sections/artikel/components/HeroRecommendations";
 
 const MuseumDetail = () => {
   const { id } = useParams();
@@ -113,6 +114,11 @@ const MuseumDetail = () => {
             </div>
           </div>
         )}
+
+        {/* Hero Recommendations */}
+        <div className="mt-16">
+          <HeroRecommendations />
+        </div>
       </section>
     </div>
   );
