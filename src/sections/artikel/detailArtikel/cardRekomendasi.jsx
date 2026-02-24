@@ -1,5 +1,5 @@
 import React from "react";
-import { RecommendationCard } from "../../components/Cards/RecommendationCard";
+import { RecommendationCard } from "../../../components/Cards/RecommendationCard";
 
 const CardRekomendasi = () => {
   // Mock data to match the screenshot provided (8 items)
