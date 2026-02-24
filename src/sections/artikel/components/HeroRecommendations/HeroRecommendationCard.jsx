@@ -27,19 +27,10 @@ const HeroRecommendationCard = ({ item }) => {
                 <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-1">
                     {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                {/* Deskripsi/Kata-kata ditaruh disini sebagai pengganti 'Detail' */}
+                <p className="text-gray-600 text-sm leading-relaxed mt-auto">
                     {item.description}
                 </p>
-            </div>
-
-            {/* Footer Button (Full Width) */}
-            <div className="mt-auto">
-                <Link
-                    to={item.linkUrl || "#"}
-                    className="block w-full bg-[#f87114] hover:bg-[#ea580c] text-white text-center font-semibold py-3.5 transition-colors duration-300"
-                >
-                    Detail
-                </Link>
             </div>
         </div>
     );
