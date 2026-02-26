@@ -28,9 +28,18 @@ const HeroRecommendationCard = ({ item }) => {
                     {item.title}
                 </h3>
                 {/* Deskripsi/Kata-kata ditaruh disini sebagai pengganti 'Detail' */}
-                <p className="text-gray-600 text-sm leading-relaxed mt-auto">
+                <p className="text-gray-600 text-sm leading-relaxed mt-auto mb-3">
                     {item.description}
                 </p>
+
+                {/* Baca Selengkapnya Link */}
+                <Link
+                    to={item.linkUrl || "#"}
+                    className="text-[#f87114] text-sm font-semibold hover:text-[#ea580c] transition-colors duration-300 mt-auto flex items-center gap-1 group"
+                >
+                    Baca Selengkapnya
+                    <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </Link>
             </div>
         </div>
     );
