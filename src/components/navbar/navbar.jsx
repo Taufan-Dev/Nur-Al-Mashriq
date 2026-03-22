@@ -75,7 +75,7 @@ const Navbar = () => {
               to={item.path}
               className={({ isActive }) =>
                 `flex items-center gap-2 text-sm uppercase tracking-widest transition-colors
-                ${isActive ? "text-prestige-gold" : "hover:text-prestige-gold"}`
+                ${isActive ? "text-prestige-gold" : "text-gray-800 hover:text-prestige-gold dark:text-gray-200 dark:hover:text-prestige-gold"}`
               }
             >
               {item.icon}
@@ -87,7 +87,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4 font-sans">
           <button
             onClick={toggleLanguage}
-            className="text-sm font-bold px-3 py-1 border border-prestige-gold rounded-full"
+            className="text-sm font-bold px-3 py-1 border border-prestige-gold rounded-full text-gray-800 dark:text-gray-200"
           >
             {language}
           </button>

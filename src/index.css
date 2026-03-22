@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* ================== FONTS ================== */
 @import url("https://fonts.googleapis.com/css2?family=Jomhuria&display=swap");
@@ -11,6 +12,10 @@
   --color-deep-forest: #081c18;
   --color-prestige-gold: #c5a059;
   --color-ethereal-white: #f8f9fa;
+
+  --color-dark: #0e1317;
+  --color-light-dark: #191f25;
+  --color-primary: #FC4100;
 
   /* Fonts */
   --font-primary: "Jomhuria", "cursive";

@@ -2,7 +2,7 @@ import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-gray-100 bg-white">
+    <footer className="relative border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-dark">
       {/* aksen gradient halus */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-prestige-gold/40 to-transparent" />
 
@@ -14,7 +14,7 @@ const Footer = () => {
             <h3 className="font-serif tracking-widest uppercase text-prestige-gold text-lg">
               Nur Al-Masriq
             </h3>
-            <p className="mt-4 text-sm text-gray-600 leading-relaxed">
+            <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               Gerbang digital untuk menjelajahi wisata, kuliner, dan UMKM lokal
               terbaik di Kabupaten Kuningan.
             </p>
@@ -22,10 +22,10 @@ const Footer = () => {
 
           {/* Menu */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-800 mb-4">
+            <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-4">
               Menu
             </h4>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
               <li><a href="/" className="hover:text-prestige-gold transition">Beranda</a></li>
               <li><a href="/wisata" className="hover:text-prestige-gold transition">Wisata</a></li>
               <li><a href="/kuliner" className="hover:text-prestige-gold transition">Kuliner</a></li>
@@ -36,10 +36,10 @@ const Footer = () => {
 
           {/* Layanan */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-800 mb-4">
+            <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-4">
               Layanan
             </h4>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
               <li>Informasi Wisata</li>
               <li>Reservasi Kuliner</li>
               <li>Produk UMKM Lokal</li>
@@ -49,10 +49,10 @@ const Footer = () => {
 
           {/* Kontak */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-800 mb-4">
+            <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-4">
               Kontak
             </h4>
-            <ul className="space-y-3 text-sm text-gray-600">
+            <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
               <li className="flex items-center gap-2">
                 <FiMapPin className="text-prestige-gold" />
                 Kuningan, Jawa Barat
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
 
         {/* bottom */}
-        <div className="mt-12 pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+        <div className="mt-12 pt-6 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 dark:text-gray-400">
           <p>
             © {new Date().getFullYear()}{" "}
             <span className="font-serif tracking-widest text-prestige-gold uppercase">

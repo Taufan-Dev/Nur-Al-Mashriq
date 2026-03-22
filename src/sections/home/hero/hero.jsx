@@ -40,7 +40,7 @@ function Hero() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 dark:from-dark via-black/70 dark:via-dark/80 to-black/40 dark:to-dark/40" />
 
       {/* Content */}
       <div className="absolute inset-0 flex items-center justify-center z-10 px-6">

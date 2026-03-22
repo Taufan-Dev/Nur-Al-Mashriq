@@ -23,7 +23,7 @@ function App() {
         <Route path="/museum/:id" element={<MuseumDetail />} />
 
         <Route path="/artikel" element={<Artikel />} />
-        <Route path="/artikel/detail" element={<ArticleDetailPage />} />
+        <Route path="/artikel/:id" element={<ArticleDetailPage />} />
       </Routes>
 
       <Footer />

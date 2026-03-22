@@ -6,17 +6,17 @@ const ListArtikel = () => {
   const articles = [
     {
       id: 1,
-      title: "Pesona Alam Gunung Ciremai yang Wajib Dikunjungi",
-      category: "Wisata",
+      title: "Penaklukan Konstantinopel Oleh Sultan Mehmed II",
+      category: "Sejarah",
       image:
-        "https://i.pinimg.com/736x/14/ad/31/14ad3171038b99261210a9fbe6785d41.jpg",
+        "https://asset.kompas.com/crops/J6ow-VVlRMUiZ1uS6cYkQNmLJ14=/0x0:1999x1333/750x500/data/photo/2021/04/20/607e8701d70f4.jpg ",
     },
     {
       id: 2,
-      title: "Kuliner Khas Kuningan yang Bikin Rindu Kampung",
-      category: "Kuliner",
+      title: "Al-Khawarizmi Bapak Aljabar Dunia",
+      category: "Tokoh",
       image:
-        "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/0896b65a-6d1e-4583-b60c-573359528121_Go-Biz_20220218_132132.jpeg",
+        "https://static.wixstatic.com/media/7335d9_d805c34d74434cdaa0fbdadbfbb03cba~mv2.jpeg/v1/fill/w_568,h_588,al_c,lg_1,q_80,enc_avif,quality_auto/7335d9_d805c34d74434cdaa0fbdadbfbb03cba~mv2.jpeg",
     },
     {
       id: 3,
