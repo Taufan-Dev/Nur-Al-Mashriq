@@ -43,7 +43,7 @@ const Navbar = () => {
     },
     {
       label: language === "ID" ? "Ilmuwan" : "scientist",
-      path: "/ilmuwan",
+      path: "/ilmuan",
       icon: <FiCoffee />,
     },
     {

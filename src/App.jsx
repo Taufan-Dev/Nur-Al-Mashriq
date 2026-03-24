@@ -8,6 +8,7 @@ import Home from "./views/home";
 import MuseumDetail from "./pages/MuseumDetail";
 import Maps from "./views/maps";
 import Artikel from "./views/artikel";
+import Ilmuan from "./views/ilmuan";
 
 import ArticleDetailPage from "./views/artikel/detail";
 
@@ -21,6 +22,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="/museum/:id" element={<MuseumDetail />} />
+
+        <Route path="/ilmuan" element={<Ilmuan />} />
 
         <Route path="/artikel" element={<Artikel />} />
         <Route path="/artikel/:id" element={<ArticleDetailPage />} />
