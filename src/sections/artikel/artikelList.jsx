@@ -1,39 +1,24 @@
 import ArtikelCard from "./artikelCard";
+import { useLanguage } from "../../context/LanguageContext";
+import { articlesData } from "../../data/articles";
 
 const ArtikelList = () => {
-  const articles = [
-    {
-      image:
-        "https://rsudkertosono.nganjukkab.go.id/web2/assets/images/2f27d1d5b8f3b564af48ff25bce30cd6.jpg",
-      category: "Lifestyle",
-      title: "Tips Hidup Sehat di Era Modern",
-      desc: "Artikel ini membahas cara menjaga kesehatan tubuh dan pikiran.",
-      date: "Senin, 10 November 2025",
-    },
-    {
-      image:
-        "https://rsudkertosono.nganjukkab.go.id/web2/assets/images/2f27d1d5b8f3b564af48ff25bce30cd6.jpg",
-      category: "Lifestyle",
-      title: "Tips Hidup Sehat di Era Modern",
-      desc: "Artikel ini membahas cara menjaga kesehatan tubuh dan pikiran.",
-      date: "Senin, 10 November 2025",
-    },
-    {
-      image:
-        "https://rsudkertosono.nganjukkab.go.id/web2/assets/images/2f27d1d5b8f3b564af48ff25bce30cd6.jpg",
-      category: "Lifestyle",
-      title: "Tips Hidup Sehat di Era Modern",
-      desc: "Artikel ini membahas cara menjaga kesehatan tubuh dan pikiran.",
-      date: "Senin, 10 November 2025",
-    },
-  ];
+  const { language } = useLanguage();
 
   return (
-    <>
-      {articles.map((item, index) => (
-        <ArtikelCard key={index} {...item} />
-      ))}
-    </>
+    <div className="space-y-6">
+      {articlesData.map((item) => {
+        const localizedItem = {
+          id: item.id,
+          image: item.image,
+          date: item.date,
+          title: item.title[language],
+          category: item.category[language],
+          desc: item.desc[language]
+        };
+        return <ArtikelCard key={item.id} {...localizedItem} language={language} />;
+      })}
+    </div>
   );
 };
 

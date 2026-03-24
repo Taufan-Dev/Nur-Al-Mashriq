@@ -1,53 +1,27 @@
 import CardArtikel from "./card";
 import { FiFileText } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../../context/LanguageContext";
+import { articlesData } from "../../../data/articles";
 
 const ListArtikel = () => {
-  const articles = [
-    {
-      id: 1,
-      title: "Penaklukan Konstantinopel Oleh Sultan Mehmed II",
-      category: "Sejarah",
-      image:
-        "https://asset.kompas.com/crops/J6ow-VVlRMUiZ1uS6cYkQNmLJ14=/0x0:1999x1333/750x500/data/photo/2021/04/20/607e8701d70f4.jpg ",
-    },
-    {
-      id: 2,
-      title: "Al-Khawarizmi Bapak Aljabar Dunia",
-      category: "Tokoh",
-      image:
-        "https://static.wixstatic.com/media/7335d9_d805c34d74434cdaa0fbdadbfbb03cba~mv2.jpeg/v1/fill/w_568,h_588,al_c,lg_1,q_80,enc_avif,quality_auto/7335d9_d805c34d74434cdaa0fbdadbfbb03cba~mv2.jpeg",
-    },
-    {
-      id: 3,
-      title: "UMKM Lokal Kuningan yang Siap Go Digital",
-      category: "UMKM",
-      image:
-        "https://pdbifiles.nos.jkt-1.neo.id/files/2018/08/05/oskm18_sappk_adriel_595839a1be7662943bad20c349ee8fa2ac09666f.jpg",
-    },
-    {
-      id: 4,
-      title: "Rekomendasi Tempat Healing di Kuningan",
-      category: "Wisata",
-      image:
-        "https://pdbifiles.nos.jkt-1.neo.id/files/2018/08/05/oskm18_sappk_adriel_595839a1be7662943bad20c349ee8fa2ac09666f.jpg",
-    },
-    {
-      id: 5,
-      title: "Event Budaya Kuningan yang Wajib Dikunjungi",
-      category: "Event",
-      image:
-        "https://pdbifiles.nos.jkt-1.neo.id/files/2018/08/05/oskm18_sappk_adriel_595839a1be7662943bad20c349ee8fa2ac09666f.jpg",
-    },
-  ];
+  const { language } = useLanguage();
+
+  // Ambil 5 artikel pertama
+  const articles = articlesData.slice(0, 5).map(a => ({
+    id: a.id,
+    image: a.image,
+    title: a.title[language],
+    category: a.category[language],
+  }));
 
   return (
-    <section className="container mx-auto px-4 py-16">
+    <section className="container light:bg-white mx-auto px-4 py-16">
       <div className="flex items-center justify-between my-8">
         {/* Judul */}
         <h3 className="flex items-center gap-2 font-serif font-extralight tracking-widest uppercase text-prestige-gold text-base lg:text-2xl">
           <FiFileText className="text-lg lg:text-2xl" />
-          Sekilas Artikel
+          {language === "ID" ? "Sekilas Artikel" : "Articles Overview"}
         </h3>
 
         {/* Link */}
@@ -55,16 +29,18 @@ const ListArtikel = () => {
           to="/artikel"
           className="text-sm lg:text-base font-medium text-prestige-gold/80 hover:text-prestige-gold transition flex items-center gap-1 group"
         >
-          Lihat Semuanya
+          {language === "ID" ? "Lihat Semuanya" : "View All"}
           <span className="group-hover:translate-x-1 transition">→</span>
         </Link>
       </div>
       {/* GRID UTAMA */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* ARTIKEL BESAR */}
-        <div className="lg:col-span-3 hidden lg:block">
-          <CardArtikel {...articles[0]} big />
-        </div>
+        {articles.length > 0 && (
+          <div className="lg:col-span-3 hidden lg:block">
+            <CardArtikel {...articles[0]} big />
+          </div>
+        )}
 
         {/* LIST ARTIKEL KECIL */}
         <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">

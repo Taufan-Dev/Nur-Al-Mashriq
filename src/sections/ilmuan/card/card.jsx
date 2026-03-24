@@ -6,7 +6,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 const ScientistCard = ({ scientist, language }) => {
   return (
-    <div className="glass-crystal rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 flex flex-col h-full group border border-prestige-gold/20 hover:border-prestige-gold/50 shadow-sm hover:shadow-xl dark:shadow-none bg-white/40 dark:bg-light-dark/40">
+    <div className="glass-crystal rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 flex flex-col h-full group border border-prestige-gold/20 hover:border-prestige-gold/50 shadow-sm hover:shadow-xl dark:shadow-none bg-white/40 dark:bg-light-dark">
       <div className="relative h-64 md:h-72 overflow-hidden bg-gray-200 dark:bg-dark">
         <img
           src={scientist.image}
@@ -74,7 +74,7 @@ const CardList = () => {
         : "Load More";
 
   return (
-    <section className="w-full pb-24 px-5 md:px-10 xl:px-20 flex justify-center bg-ethereal-white dark:bg-deep-forest transition-colors duration-500">
+    <section className="w-full pb-24 px-5 md:px-10 xl:px-20 flex justify-center bg-ethereal-white dark:bg-dark transition-colors duration-500">
       <div className="max-w-7xl w-full flex flex-col items-center">
         {/* Grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 w-full">

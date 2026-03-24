@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { FiCalendar, FiArrowRight } from "react-icons/fi";
 
-const ArtikelCard = ({ image, category, title, desc, date }) => {
+const ArtikelCard = ({ id, image, category, title, desc, date, language }) => {
   return (
     <Link
-      to="/artikel/detail"
+      to={`/artikel/${id}`}
       className="
         block
         w-full
@@ -41,7 +41,7 @@ const ArtikelCard = ({ image, category, title, desc, date }) => {
             </div>
 
             <span className="flex items-center gap-1 text-prestige-gold font-semibold">
-              Baca <FiArrowRight />
+              {language === "ID" ? "Baca" : "Read"} <FiArrowRight />
             </span>
           </div>
         </div>

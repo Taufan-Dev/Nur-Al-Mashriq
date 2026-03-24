@@ -12,33 +12,33 @@ const About = () => {
       tags: {
         sejarah: "Sejarah",
         sains: "Sains",
-        tokoh: "Tokoh",
+        tokoh: "Ilmuwan",
       },
       aboutUs: "Tentang Kami",
       desc: "Nur Al-Mashriq menghubungkan masa lalu yang gilang-gemilang dengan saat ini. Di masa Eropa terjerumus dalam kegelapan, peradaban Islam menjadi mercusuar ilmu pengetahuan, memberikan sumbangsih tanpa batas untuk sains, arsitektur, dan pelestarian pengetahuan umat manusia yang membentuk pondasi awal dari kemajuan dunia modern saat ini.",
       stats: {
         ilmuwan: "Tokoh Ilmuwan",
         artefak: "Artefak Edukasi",
-        museum: "Museum Bersejarah",
+        museum: "Museum",
         pengunjung: "Pengunjung",
       },
       btnLabel: "WATCH INTRO",
     },
     EN: {
-      story: "OUR STORY",
+      story: "Nur Al-Mashriq",
       titlePart1: "The Islamic Golden Age inspires modern ",
       titlePart2: "Technology & Civilization.",
       tags: {
         sejarah: "History",
         sains: "Science",
-        tokoh: "Figures",
+        tokoh: "Scientists",
       },
       aboutUs: "About Us",
       desc: "Nur Al-Mashriq connects the glorious past with the present. When Europe was plunged into the dark ages, Islamic civilization became a beacon of knowledge, providing limitless contributions to science, architecture, and the preservation of human knowledge that formed the foundation for the advancement of today's modern world.",
       stats: {
         ilmuwan: "Scientists",
         artefak: "Digital Artifacts",
-        museum: "Historical Museums",
+        museum: "Museums",
         pengunjung: "Visitors",
       },
       btnLabel: "WATCH INTRO",
@@ -70,13 +70,13 @@ const About = () => {
           </div>
 
           {/* Large Vertical Image */}
-          <div className="rounded-3xl overflow-hidden shadow-2xl h-[350px] relative group mt-auto border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-white/5">
+          <div className=" h-[175px] lg:h-[305px] w-full relative group mt-auto">
             <img
-              src="https://images.unsplash.com/photo-1744132241239-2e02b0d7c9f1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/1.png"
               alt="Sejarah Islam"
-              className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
+              className="w-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/10 dark:bg-black/20 group-hover:bg-transparent transition duration-500" />
+            <div className="" />
           </div>
         </div>
 
@@ -86,7 +86,7 @@ const About = () => {
           <div className="grid grid-cols-2 gap-6">
             <div className="rounded-3xl relative overflow-hidden h-[220px] group shadow-xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-white/5">
               <img
-                src="https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?auto=format&fit=crop&w=800&q=80"
+                src="https://www.pusatumroh.id/wp-content/uploads/2023/02/destinasi-wisata-sejarah-Islam-di-Turki.jpg"
                 alt="Sains"
                 className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
               />
@@ -95,9 +95,9 @@ const About = () => {
                 <span className="mb-2 w-fit bg-black/70 px-3 py-1 text-xs text-white rounded uppercase tracking-wide">
                   {content[language].tags.sejarah}
                 </span>
-                <span className="mb-2 w-fit bg-black/70 px-3 py-1 text-xs text-white rounded uppercase tracking-wide">
+                {/* <span className="mb-2 w-fit bg-black/70 px-3 py-1 text-xs text-white rounded uppercase tracking-wide">
                   {content[language].tags.sains}
-                </span>
+                </span> */}
               </div>
             </div>
 
@@ -131,7 +131,7 @@ const About = () => {
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 50+
               </h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+              <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">
                 {content[language].stats.ilmuwan}
               </p>
             </div>
@@ -139,7 +139,7 @@ const About = () => {
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 100+
               </h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+              <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">
                 {content[language].stats.artefak}
               </p>
             </div>
@@ -147,7 +147,7 @@ const About = () => {
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 15+
               </h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+              <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">
                 {content[language].stats.museum}
               </p>
             </div>
@@ -155,7 +155,7 @@ const About = () => {
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 20K+
               </h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+              <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">
                 {content[language].stats.pengunjung}
               </p>
             </div>

@@ -1,52 +1,117 @@
 export const articlesData = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1584043204475-8cc101d6c77a?q=80&w=1000",
-    category: "Sejarah",
-    title: "Baitul Hikmah: Pusat Perkembangan Ilmu Pengetahuan Dunia di Baghdad",
-    desc: "Mengenal lebih jauh tentang perpustakaan agung dan pusat penerjemahan terbesar pada masa puncak kejayaan Dinasti Abbasiyah.",
-    date: "Senin, 10 November 2025",
+    image:
+      "https://asset.kompas.com/crops/ltUxH6s-3KP9Q1XCGhHzRxG9mcQ=/0x0:1999x1333/1200x800/data/photo/2021/04/20/607e8701d70f4.jpg",
+    date: "Rabu, 26 November 2026",
     author: "Taufan Hidayatul Akbar",
-    content: "Baitul Hikmah ('Rumah Kebijaksanaan') adalah perpustakaan, institut penerjemahan, dan pusat penelitian yang didirikan pada masa Dinasti Abbasiyah di Baghdad, Irak. Didirikan pada masa Khalifah Harun Ar-Rasyid dan mencapai puncaknya di bawah kekuasaan putranya, Al-Ma'mun.\n\nDi tempat inilah para sarjana dari berbagai latar belakang berkumpul untuk menerjemahkan karya-karya klasik Yunani, Persia, dan India ke dalam bahasa Arab. Baitul Hikmah menjadi simbol dari kemajuan peradaban Islam dalam bidang matematika, astronomi, kedokteran, filsafat, dan berbagai ilmu lainnya yang menjadi fondasi ilmu pengetahuan modern."
+    category: {
+      ID: "Sejarah",
+      EN: "History",
+    },
+    title: {
+      ID: "Penaklukan Konstantinopel: Akhir Kekaisaran Bizantium",
+      EN: "The Conquest of Constantinople: The Fall of the Byzantine Empire",
+    },
+    desc: {
+      ID: "Peristiwa bersejarah yang mengubah peta dunia di bawah kepemimpinan Sultan Mehmed II.",
+      EN: "A historic event that changed the world map under Sultan Mehmed II.",
+    },
+    content: {
+      ID: "Penaklukan Konstantinopel pada tahun 1453 oleh Sultan Mehmed II dari Kesultanan Utsmaniyah menjadi salah satu peristiwa paling penting dalam sejarah dunia. Kota ini sebelumnya merupakan ibu kota Kekaisaran Bizantium.\n\nDengan strategi militer yang cerdas dan penggunaan meriam besar, pasukan Utsmaniyah berhasil menembus benteng kota. Peristiwa ini menandai berakhirnya Abad Pertengahan dan membuka era baru dalam sejarah dunia.",
+      EN: "The conquest of Constantinople in 1453 by Sultan Mehmed II of the Ottoman Empire became one of the most important events in world history. The city was previously the capital of the Byzantine Empire.\n\nWith smart military strategies and the use of massive cannons, the Ottoman army breached the city's walls. This event marked the end of the Middle Ages and the beginning of a new era.",
+    },
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1564769625905-50e93615eede?q=80&w=1000",
-    category: "Ilmuwan",
-    title: "Al-Khawarizmi: Bapak Aljabar Dunia dari Era Keemasan Islam",
-    desc: "Menelusuri jejak karya ilmuwan jenius Muslim yang menemukan konsep aljabar dan angka nol dalam matematika modern.",
-    date: "Rabu, 12 November 2025",
+    image:
+      "https://static.wixstatic.com/media/7335d9_d805c34d74434cdaa0fbdadbfbb03cba~mv2.jpeg/v1/fill/w_568,h_588,al_c,lg_1,q_80,enc_avif,quality_auto/7335d9_d805c34d74434cdaa0fbdadbfbb03cba~mv2.jpeg",
+    date: "Senin, 24 November 2026",
     author: "Taufan Hidayatul Akbar",
-    content: "Muhammad ibn Musa al-Khawarizmi adalah seorang ilmuwan jenius asal Persia yang berkarya di Baitul Hikmah, Baghdad. Ia dikenal sebagai 'Bapak Aljabar' dan juga perintis penggunaan angka nol serta sistem desimal Hindu-Arab.\n\nKarya utamanya, 'Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala', menjadi buku teks matematika standar di universitas-universitas Eropa hingga berabad-abad kemudian. Istilah 'Aljabar' berasal dari kata 'al-Jabr' dalam buku tersebut, sementara dari namanya juga muncul istilah algoritma (Algorithm)."
+    category: {
+      ID: "Ilmuwan",
+      EN: "Scientist",
+    },
+    title: {
+      ID: "Al-Khawarizmi dan Penemuan Angka Nol",
+      EN: "Al-Khwarizmi and the Discovery of Zero",
+    },
+    desc: {
+      ID: "Peran besar Al-Khawarizmi dalam memperkenalkan angka nol dan sistem bilangan modern.",
+      EN: "The major role of Al-Khwarizmi in introducing zero and the modern numeral system.",
+    },
+    content: {
+      ID: "Al-Khawarizmi adalah ilmuwan Muslim yang berjasa besar dalam perkembangan matematika modern, termasuk dalam penyebaran konsep angka nol. Meskipun konsep nol berasal dari India, Al-Khawarizmi-lah yang memperkenalkannya ke dunia Islam dan kemudian ke Eropa.\n\nMelalui karyanya, sistem bilangan desimal menjadi lebih mudah digunakan dalam perhitungan. Tanpa angka nol, perkembangan ilmu komputer, matematika, dan teknologi modern tidak akan seperti sekarang.",
+      EN: "Al-Khwarizmi was a Muslim scholar who played a major role in the development of modern mathematics, including spreading the concept of zero. Although zero originated in India, he introduced it to the Islamic world and later to Europe.\n\nThrough his work, the decimal system became easier to use. Without zero, modern computing, mathematics, and technology would not exist as they do today.",
+    },
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1543333995-a78aea2fee50?q=80&w=1000",
-    category: "Tokoh",
-    title: "Harun Ar-Rasyid dan Puncak Kejayaan Dinasti Abbasiyah",
-    desc: "Kisah kepemimpinan Khalifah Harun Ar-Rasyid yang membawa kesejahteraan dan keemasan ilmu pengetahuan di dunia Islam.",
-    date: "Jumat, 14 November 2025",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlcoC8pUm4WtSdP4Tu3dGxIjZKqRJXcUDD4rg6j44uhYFxcbmJ72Z_DIqoSwShhioosmfKbf0Nle6cuLQTqdd-GXEhvqZqgHo0e2IFiA&s=10",
+    date: "Jumat, 28 November 2026",
     author: "Taufan Hidayatul Akbar",
-    content: "Harun Ar-Rasyid (berkuasa 786-809 M) adalah salah satu khalifah paling dikenal dari Dinasti Abbasiyah. Di masa kepemimpinannya, kekhalifahan Islam mencapai puncak kebesaran politik, budaya, dan intelektual. Baghdad saat itu menjadi kota terindah dan paling makmur di dunia.\n\nDi bawah dukungannya yang kuat terhadap ilmu pengetahuan dan seni, beliau mengumpulkan sarjana, penyair, dan artis dari seluruh penjuru negeri, yang kemudian menjadi cikal bakal berdirinya Baitul Hikmah. Masa kekuasaannya juga sering diromantisasi dalam kumpulan cerita populer Seribu Satu Malam."
+    category: {
+      ID: "Ilmuwan",
+      EN: "Scientist",
+    },
+    title: {
+      ID: "Ibnu Sina: Pelopor Kedokteran Modern",
+      EN: "Ibn Sina: The Pioneer of Modern Medicine",
+    },
+    desc: {
+      ID: "Kontribusi Ibnu Sina dalam dunia medis yang menjadi rujukan selama berabad-abad.",
+      EN: "Ibn Sina’s contributions to medicine that were referenced for centuries.",
+    },
+    content: {
+      ID: "Ibnu Sina atau Avicenna adalah salah satu ilmuwan terbesar dalam sejarah Islam yang memberikan kontribusi luar biasa dalam bidang kedokteran. Karyanya yang terkenal, 'Al-Qanun fi al-Tibb', menjadi referensi utama di dunia medis selama ratusan tahun.\n\nIa mengembangkan metode diagnosis, farmasi, dan konsep penyakit yang masih digunakan hingga kini. Pemikirannya menjadi dasar bagi perkembangan kedokteran modern di dunia Barat.",
+      EN: "Ibn Sina, also known as Avicenna, was one of the greatest scholars in Islamic history who made extraordinary contributions to medicine. His famous work, 'The Canon of Medicine', became a primary reference in the medical world for centuries.\n\nHe developed diagnostic methods, pharmacology, and disease concepts still used today. His ideas laid the foundation for modern medicine in the Western world.",
+    },
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1563223771-5fe4038fbfc9?q=80&w=1000",
-    category: "Jenderal",
-    title: "Tariq bin Ziyad: Sang Penakluk Andalusia (Spanyol)",
-    desc: "Perjalanan epik sang panglima perang yang berhasil membawa cahaya Islam ke daratan Eropa dan Semenanjung Iberia.",
-    date: "Senin, 17 November 2025",
+    image:
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/54/c9/55/turkish-and-islamic-art.jpg?w=700&h=400&s=1",
+    date: "Senin, 1 Desember 2026",
     author: "Taufan Hidayatul Akbar",
-    content: "Tariq bin Ziyad adalah salah seorang jenderal legendaris yang memimpin penaklukan Andalusia (perang di Semenanjung Iberia, kini Spanyol dan Portugal) pada tahun 711 M. Ia diutus oleh Gubernur Afrika Utara, Musa bin Nusair.\n\nNama tempat pendaratannya, Jabal Tariq (Gunung Tariq), hingga kini masih digunakan dalam bentuk yang tererosi lidah Eropa, yakni Gibraltar. Keberaniannya sangat terkenal, terutama dalam kisahnya yang membakar kapal armadanya sendiri saat mendarat agar pasukannya tidak punya pilihan lain selain bertempur dan menang."
+    category: {
+      ID: "Tempat",
+      EN: "Place",
+    },
+    title: {
+      ID: "Museum of Turkish and Islamic Arts: Jejak Peradaban Islam",
+      EN: "Museum of Turkish and Islamic Arts: Traces of Islamic Civilization",
+    },
+    desc: {
+      ID: "Menjelajahi koleksi bersejarah Islam di museum ikonik di Istanbul, Turki.",
+      EN: "Exploring historical Islamic collections in an iconic museum in Istanbul.",
+    },
+    content: {
+      ID: "Museum of Turkish and Islamic Arts yang terletak di Istanbul, Turki, menyimpan berbagai koleksi berharga dari peradaban Islam. Mulai dari manuskrip kuno, karpet, kaligrafi, hingga artefak dari berbagai wilayah Islam.\n\nMuseum ini menjadi salah satu pusat edukasi penting untuk memahami sejarah, seni, dan budaya Islam dari masa ke masa. Bangunannya sendiri juga memiliki nilai sejarah tinggi karena dulunya merupakan istana pada masa Ottoman.",
+      EN: "The Museum of Turkish and Islamic Arts in Istanbul houses valuable collections from Islamic civilization, including manuscripts, carpets, calligraphy, and artifacts.\n\nIt serves as an important educational center to understand Islamic history, art, and culture across centuries. The building itself has historical value as it was once an Ottoman palace.",
+    },
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1560032646-7dcac1f349af?q=80&w=1000",
-    category: "Tempat",
-    title: "Kemegahan Alhambra: Permata Arsitektur Islam di Spanyol",
-    desc: "Keindahan istana Alhambra yang menjadi saksi bisu keagungan peradaban Islam di wilayah Andalusia yang masih bertahan hingga kini.",
-    date: "Rabu, 19 November 2025",
+    image:
+      "https://akcdn.detik.net.id/visual/2021/04/12/ilustrasi-tokoh-islam-abu-raihan-al-biruni_169.jpeg?w=1200",
+    date: "Rabu, 3 Desember 2026",
     author: "Taufan Hidayatul Akbar",
-    content: "Alhambra, yang berarti 'Si Merah' (Qasr al-Hamra), adalah sebuah kompleks istana dan benteng yang terletak di Granada, Andalusia, Spanyol. Dibangun atau tepatnya diperluas pada masa pemerintahan Dinasti Nasrid di abad ke-13 dan ke-14.\n\nBangunan ini adalah salah satu monumen tertinggi dari arsitektur Islam di dunia Barat. Detail ornamen kaligrafi, gaya mocarabe pada langit-langit kubahnya, dan harmoni antara struktur bangunan, air mancur, serta taman-taman di halaman (seperti Court of the Lions), menjadikannya mahakarya abadi peninggalan era emas Islam yang bertahan hingga saat ini."
-  }
+    category: {
+      ID: "Ilmuwan",
+      EN: "Scientist",
+    },
+    title: {
+      ID: "Al-Biruni: Ilmuwan Multidisiplin yang Mendunia",
+      EN: "Al-Biruni: A Multidisciplinary Genius",
+    },
+    desc: {
+      ID: "Kisah ilmuwan Muslim yang menguasai astronomi, geografi, dan fisika.",
+      EN: "The story of a Muslim scientist who mastered astronomy, geography, and physics.",
+    },
+    content: {
+      ID: "Al-Biruni adalah salah satu ilmuwan Muslim paling cerdas yang menguasai berbagai bidang ilmu seperti astronomi, geografi, matematika, dan fisika. Ia dikenal karena metode ilmiahnya yang sangat maju pada masanya.\n\nSalah satu pencapaiannya adalah menghitung keliling bumi dengan tingkat akurasi yang sangat tinggi. Ia juga menulis banyak buku yang menjadi rujukan penting dalam ilmu pengetahuan dunia.",
+      EN: "Al-Biruni was one of the most brilliant Muslim scientists who mastered astronomy, geography, mathematics, and physics. He was known for his advanced scientific methods.\n\nOne of his achievements was calculating the Earth's circumference with remarkable accuracy. He also wrote many books that became important references in global science.",
+    },
+  },
 ];

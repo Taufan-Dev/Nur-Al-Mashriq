@@ -37,7 +37,7 @@ const CtaSection = () => {
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="/wisata"
+            href="/ilmuan"
             className="px-8 py-3 rounded-full bg-prestige-gold text-white font-medium shadow hover:shadow-lg hover:opacity-90 transition"
           >
             {content[language].btnPrimary}

@@ -37,7 +37,7 @@ const Hero = () => {
           }}
         ></div>
         <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[600px] h-[600px] rounded-full bg-prestige-gold/30 dark:bg-light-dark blur-3xl animate-[pulse_8s_ease-in-out_infinite]"></div>
-        <div className="absolute bottom-0 left-0 -ml-32 w-[500px] h-[500px] rounded-full bg-prestige-gold/10 dark:bg-light-dark blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -ml-32 w-[500px] h-[500px] rounded-full bg-prestige-gold/10 dark:bg-light-dark/10 blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl w-full px-6 md:px-12 flex flex-col justify-center items-start pt-10 relative z-10">

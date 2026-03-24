@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Card = ({
+  id,
   image,
   title,
   category,
@@ -6,8 +9,9 @@ const Card = ({
   className = "",
 }) => {
   return (
-    <div
-      className={`group relative overflow-hidden rounded-xl cursor-pointer ${className} ${
+    <Link
+      to={`/artikel/${id}`}
+      className={`block group relative overflow-hidden rounded-xl cursor-pointer ${className} ${
         big ? "h-[420px]" : "h-[200px]"
       }`}
     >
@@ -30,7 +34,7 @@ const Card = ({
           {title}
         </h3>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,8 +1,34 @@
 import { FiCalendar, FiArrowLeft } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useLanguage } from "../../../context/LanguageContext";
+import { articlesData } from "../../../data/articles";
 
 const ArticleDetail = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const { language } = useLanguage();
+
+  const article = articlesData.find((a) => a.id === parseInt(id));
+
+  // Fallback if article not found
+  if (!article) {
+    return (
+      <div className="py-20 text-center text-forest dark:text-ethereal-white">
+        <h2 className="text-2xl font-bold mb-4">
+          {language === "ID" ? "Artikel Tidak Ditemukan" : "Article Not Found"}
+        </h2>
+        <button
+          onClick={() => navigate(-1)}
+          className="text-prestige-gold hover:underline"
+        >
+          {language === "ID" ? "Kembali" : "Go Back"}
+        </button>
+      </div>
+    );
+  }
+
+  // Parse lines to paragraphs
+  const contentParagraphs = article.content[language].split("\n").filter((p) => p.trim() !== "");
 
   return (
     <>
@@ -13,59 +39,52 @@ const ArticleDetail = () => {
           mb-6
           flex items-center gap-2
           text-sm font-semibold
-          text-gray-600
-          hover:text-prestige-gold
+          text-gray-600 dark:text-gray-300
+          hover:text-prestige-gold dark:hover:text-prestige-gold
           transition
         "
       >
         <FiArrowLeft className="text-lg" />
-        Kembali
+        {language === "ID" ? "Kembali" : "Back"}
       </button>
 
       {/* KATEGORI */}
-      <p className="text-prestige-gold font-semibold text-sm md:text-base mb-2">
-        Teknologi
+      <p className="text-prestige-gold font-semibold text-sm md:text-base mb-3">
+        {article.category[language]}
       </p>
 
       {/* JUDUL */}
-      <h1 className="text-3xl font-bold mb-3">
-        Inovasi Terbaru dalam Dunia Digital 2025
+      <h1 className="text-3xl md:text-5xl font-black font-sans text-forest dark:text-ethereal-white mb-6 leading-tight">
+        {article.title[language]}
       </h1>
 
-      {/* AUTHOR */}
-      <p className="font-semibold mb-4">
-        Dipublikasikan Oleh{" "}
-        <span className="text-prestige-gold">Taufan Hidayatul Akbar</span>
-      </p>
+      {/* AUTHOR & TANGGAL */}
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-8">
+        <p className="font-semibold text-forest/80 dark:text-ethereal-white/80">
+          {language === "ID" ? "Oleh" : "By"}:{" "}
+          <span className="text-prestige-gold">{article.author}</span>
+        </p>
 
-      {/* TANGGAL */}
-      <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-        <FiCalendar />
-        <span>10 Juni 2025</span>
+        <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          <FiCalendar />
+          <span>{article.date}</span>
+        </div>
       </div>
 
       {/* IMAGE */}
       <img
-        src="https://i.pinimg.com/736x/14/ad/31/14ad3171038b99261210a9fbe6785d41.jpg"
-        alt="Artikel"
-        className="w-full h-[256px] object-cover rounded-xl mb-6"
+        src={article.image}
+        alt={article.title[language]}
+        className="w-full h-[300px] md:h-[450px] object-cover rounded-2xl mb-10 shadow-lg"
       />
 
       {/* CONTENT */}
-      <article className="prose max-w-none text-justify">
-        Dunia digital terus berkembang pesat dengan hadirnya teknologi seperti
-        kecerdasan buatan, blockchain, dan Internet of Things (IoT). Inovasi ini
-        membawa perubahan besar di berbagai sektor kehidupan.
-        <br />
-        <br />
-        Dunia digital terus berkembang pesat dengan hadirnya teknologi seperti
-        kecerdasan buatan, blockchain, dan Internet of Things (IoT). Inovasi ini
-        membawa perubahan besar di berbagai sektor kehidupan.
-        <br />
-        <br />
-        Dunia digital terus berkembang pesat dengan hadirnya teknologi seperti
-        kecerdasan buatan, blockchain, dan Internet of Things (IoT). Inovasi ini
-        membawa perubahan besar di berbagai sektor kehidupan.
+      <article className="prose prose-lg max-w-none text-justify text-forest/90 dark:text-ethereal-white/90">
+        {contentParagraphs.map((paragraph, index) => (
+          <p key={index} className="mb-6 leading-relaxed">
+            {paragraph}
+          </p>
+        ))}
       </article>
     </>
   );

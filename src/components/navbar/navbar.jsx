@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import {
   FiMap,
-  FiCoffee,
-  FiShoppingBag,
+  FiUsers,
+  FiHome,
   FiFileText,
   FiMenu,
   FiX,
@@ -39,12 +39,12 @@ const Navbar = () => {
     {
       label: language === "ID" ? "Beranda" : "Home",
       path: "/",
-      icon: <FiMap />,
+      icon: <FiHome />,
     },
     {
       label: language === "ID" ? "Ilmuwan" : "scientist",
       path: "/ilmuan",
-      icon: <FiCoffee />,
+      icon: <FiUsers />,
     },
     {
       label: language === "ID" ? "museum" : "museum",
@@ -102,10 +102,54 @@ const Navbar = () => {
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl text-prestige-gold"
+          className="md:hidden text-2xl text-prestige-gold focus:outline-none"
         >
           {open ? <FiX /> : <FiMenu />}
         </button>
+
+        {/* --- MOBILE DROPDOWN MENU --- */}
+        {open && (
+          <div className="absolute top-full left-0 right-0 mt-4 mx-2 glass-crystal bg-white/80 dark:bg-deep-forest/80 rounded-3xl p-6 flex flex-col gap-6 md:hidden z-50 animate-fade-in shadow-2xl shadow-forest/10 border border-prestige-gold/30">
+            <div className="flex flex-col gap-5 border-b border-prestige-gold/20 pb-6">
+              {menuItems.map((item) => (
+                <NavLink
+                  key={item.label}
+                  to={item.path}
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `flex items-center gap-4 text-base uppercase tracking-widest transition-colors font-sans font-bold
+                    ${
+                      isActive
+                        ? "text-prestige-gold"
+                        : "text-forest hover:text-prestige-gold dark:text-gray-200 dark:hover:text-prestige-gold"
+                    }`
+                  }
+                >
+                  <span className="text-xl text-prestige-gold/80">
+                    {item.icon}
+                  </span>
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+
+            <div className="flex justify-between items-center pt-2">
+              <button
+                onClick={toggleLanguage}
+                className="text-sm font-bold px-5 py-2 border-[1.5px] border-prestige-gold rounded-full text-forest dark:text-ethereal-white active:bg-prestige-gold active:text-white transition-colors"
+              >
+                Lang: {language}
+              </button>
+
+              <button
+                onClick={() => setDarkMode(!darkMode)}
+                className="text-2xl text-prestige-gold p-3 bg-prestige-gold/10 dark:bg-white/5 rounded-full"
+              >
+                {darkMode ? <FiSun /> : <FiMoon />}
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
