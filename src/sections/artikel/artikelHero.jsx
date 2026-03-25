@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../context/LanguageContext";
+import { articlesData } from "../../data/articles";
 
 const ArtikelHero = () => {
+  const { language } = useLanguage();
+  const heroArticle = articlesData[0]; // Mengambil artikel pertama untuk hero
+
   return (
     <div
       className="xl:col-span-3 h-[280px] md:h-[350px] xl:h-[450px] relative flex items-end rounded-xl overflow-hidden p-4 md:p-10"
       style={{
-        backgroundImage:
-          "url('https://i.pinimg.com/736x/14/ad/31/14ad3171038b99261210a9fbe6785d41.jpg')",
+        backgroundImage: `url('${heroArticle.image}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -15,17 +19,17 @@ const ArtikelHero = () => {
 
       <div className="relative z-10 w-full max-w-3xl">
         <h6 className="text-prestige-gold font-semibold text-sm md:text-base mb-2">
-          Kategori Artikel
+          {heroArticle.category[language]}
         </h6>
 
-        <Link to="/artikel/detail">
-          <h2 className="text-white font-bold text-xl md:text-2xl xl:text-3xl">
-            Judul Artikel Utama yang Menarik dan Informatif
+        <Link to={`/artikel/${heroArticle.id}`}>
+          <h2 className="text-white font-bold text-xl md:text-2xl xl:text-3xl hover:text-prestige-gold transition-colors duration-300">
+            {heroArticle.title[language]}
           </h2>
         </Link>
 
         <p className="text-gray-200 mt-3 text-sm hidden xl:block">
-          Deskripsi singkat artikel utama untuk menarik minat pembaca.
+          {heroArticle.desc[language]}
         </p>
       </div>
     </div>

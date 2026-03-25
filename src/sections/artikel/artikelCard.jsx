@@ -7,6 +7,7 @@ const ArtikelCard = ({ id, image, category, title, desc, date, language }) => {
       to={`/artikel/${id}`}
       className="
         block
+        dark:bg-light-dark
         w-full
         border border-prestige-gold/70
         rounded-3xl

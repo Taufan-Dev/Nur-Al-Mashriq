@@ -7,7 +7,7 @@ const RecommendationCard = ({ category, title }) => {
         {category}
       </p>
       <Link to="#">
-        <h5 className="font-semibold text-gray-900 hover:text-prestige-gold transition">
+        <h5 className="font-semibold text-gray-900 dark:text-white transition">
           {title}
         </h5>
       </Link>
