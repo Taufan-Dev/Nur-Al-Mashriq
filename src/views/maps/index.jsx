@@ -5,7 +5,7 @@ const MapsPage = () => {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* ===== SECTION HEADER ===== */}
-      <section className="px-5 md:px-10 xl:px-20 pt-20 text-center">
+      <section className="px-5 md:px-10 xl:px-20 pt-28 md:pt-32 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Peta Museum Islam Dunia
         </h1>

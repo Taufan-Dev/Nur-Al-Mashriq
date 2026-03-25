@@ -23,8 +23,7 @@ const MuseumDetail = () => {
         autoLoad: true,
         pitch: 10,
         yaw: 180,
-        hfov: 110,
-        autoRotate: -2,
+        hfov: 100,
         showZoomCtrl: true,
         hotSpots: [
           {
@@ -55,18 +54,8 @@ const MuseumDetail = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 pb-20 relative">
-      {/* Header */}
-      <header className="p-6">
-        <Link
-          to="/"
-          className="text-indigo-700 font-semibold hover:text-indigo-500"
-        >
-          ← Kembali
-        </Link>
-      </header>
-
       {/* Content */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 pt-28 md:pt-32 pb-10">
         <h1 className="text-4xl font-bold mb-4">{location.name}</h1>
 
         <p className="text-gray-700 text-lg leading-relaxed mb-10">
@@ -86,10 +75,10 @@ const MuseumDetail = () => {
           {/* Grid 2x2 Gambar Kecil (Kanan) */}
           <div className="grid grid-cols-2 gap-4">
             {(location.gallery || [
-              "https://images.unsplash.com/photo-1541832069-e6ce2eb87af7?auto=format&fit=crop&q=80&w=400&h=400",
-              "https://images.unsplash.com/photo-1582561424760-00b84df4dd88?auto=format&fit=crop&q=80&w=400&h=400",
-              "https://images.unsplash.com/photo-1574359422045-814ae396dfc8?auto=format&fit=crop&q=80&w=400&h=400",
-              "https://images.unsplash.com/photo-1604871000636-074fa5117945?auto=format&fit=crop&q=80&w=400&h=400"
+              `https://picsum.photos/seed/${location.id}1/400/400`,
+              `https://picsum.photos/seed/${location.id}2/400/400`,
+              `https://picsum.photos/seed/${location.id}3/400/400`,
+              `https://picsum.photos/seed/${location.id}4/400/400`
             ]).slice(0, 4).map((imgSrc, index) => (
               <img
                 key={index}
