@@ -11,7 +11,7 @@ const ScientistCard = ({ scientist, language }) => {
         <img
           src={scientist.image}
           alt={scientist.name}
-          className="w-full h-full object-cover relative z-10 group-hover:scale-110 transition-transform duration-700"
+          className="w-full h-full object-cover relative z-10  transition-transform duration-700"
           onError={(e) => {
             e.target.onerror = null;
             // Fallback content if image is broken
@@ -20,10 +20,10 @@ const ScientistCard = ({ scientist, language }) => {
           }}
         />
         <div className="absolute top-4 right-4 z-20 flex flex-wrap gap-2 justify-end max-w-[80%]">
-          {scientist.fields.slice(0, 2).map((field, idx) => (
+          {scientist[language]?.fields?.slice(0, 2).map((field, idx) => (
             <span
               key={idx}
-              className="px-3 py-1 text-xs font-bold rounded-full bg-white text-forest dark:bg-dark dark:text-prestige-gold shadow-md"
+              className="mb-2 w-fit bg-black/70 px-3 py-1 text-xs text-white rounded uppercase tracking-wide"
             >
               {field}
             </span>
@@ -35,11 +35,11 @@ const ScientistCard = ({ scientist, language }) => {
         <span className="text-prestige-gold text-sm font-bold tracking-widest uppercase mb-2">
           {scientist.era}
         </span>
-        <h3 className="text-2xl lg:text-3xl font-sans font-black text-forest dark:text-ethereal-white mb-3">
+        <h3 className="text-xl lg:text-2xl font-sans font-black dark:text-ethereal-white mb-3">
           {scientist.name}
         </h3>
-        <p className="text-forest/80 dark:text-ethereal-white/80 text-base mb-8 flex-grow leading-relaxed">
-          {scientist.shortDescription}
+        <p className="text-forest/80 dark:text-ethereal-white/80 mb-8 flex-grow leading-relaxed">
+          {scientist[language]?.shortDescription}
         </p>
 
         <Link
