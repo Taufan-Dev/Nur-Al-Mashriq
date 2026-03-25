@@ -11,6 +11,7 @@ import Artikel from "./views/artikel";
 import Ilmuan from "./views/ilmuan";
 
 import ArticleDetailPage from "./views/artikel/detail";
+import IlmuanDetailPage from "./views/ilmuan/detail";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/museum/:id" element={<MuseumDetail />} />
 
         <Route path="/ilmuan" element={<Ilmuan />} />
+        <Route path="/ilmuan/:id" element={<IlmuanDetailPage />} />
 
         <Route path="/artikel" element={<Artikel />} />
         <Route path="/artikel/:id" element={<ArticleDetailPage />} />

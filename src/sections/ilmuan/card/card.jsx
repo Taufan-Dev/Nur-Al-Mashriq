@@ -6,12 +6,15 @@ import { FiArrowRight } from "react-icons/fi";
 
 const ScientistCard = ({ scientist, language }) => {
   return (
-    <div className="glass-crystal rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 flex flex-col h-full group border border-prestige-gold/20 hover:border-prestige-gold/50 shadow-sm hover:shadow-xl dark:shadow-none bg-white/40 dark:bg-light-dark">
+    <Link 
+      to={`/ilmuan/${scientist.id}`}
+      className="glass-crystal rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 flex flex-col h-full group border border-prestige-gold/20 hover:border-prestige-gold/50 shadow-sm hover:shadow-xl dark:shadow-none bg-white/40 dark:bg-light-dark cursor-pointer"
+    >
       <div className="relative h-64 md:h-72 overflow-hidden bg-gray-200 dark:bg-dark">
         <img
           src={scientist.image}
           alt={scientist.name}
-          className="w-full h-full object-cover relative z-10  transition-transform duration-700"
+          className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-110"
           onError={(e) => {
             e.target.onerror = null;
             // Fallback content if image is broken
@@ -32,26 +35,24 @@ const ScientistCard = ({ scientist, language }) => {
       </div>
 
       <div className="p-6 md:p-8 flex flex-col flex-grow relative z-20">
-        <span className="text-prestige-gold text-sm font-bold tracking-widest uppercase mb-2">
+        <span className="text-prestige-gold text-sm font-bold tracking-widest uppercase mb-2 block">
           {scientist.era}
         </span>
-        <h3 className="text-xl lg:text-2xl font-sans font-black dark:text-ethereal-white mb-3">
+        <h3 className="text-xl lg:text-2xl font-sans font-black text-forest dark:text-ethereal-white mb-3">
           {scientist.name}
         </h3>
-        <p className="text-forest/80 dark:text-ethereal-white/80 mb-8 flex-grow leading-relaxed">
+        <p className="text-forest/80 dark:text-ethereal-white/80 text-base mb-8 flex-grow leading-relaxed">
           {scientist[language]?.shortDescription}
         </p>
 
-        <Link
-          to="#"
-          onClick={(e) => e.preventDefault()} // Buat dummy link karena blom ada page detail
-          className="inline-flex items-center gap-2 text-prestige-gold font-bold hover:gap-4 transition-all w-fit"
+        <span
+          className="inline-flex items-center gap-2 text-prestige-gold font-bold group-hover:gap-4 transition-all w-fit mt-auto"
         >
           {language === "ID" ? "Baca Selengkapnya" : "Read More"}
           <FiArrowRight />
-        </Link>
+        </span>
       </div>
-    </div>
+    </Link>
   );
 };
 
