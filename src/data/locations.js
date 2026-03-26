@@ -1,3 +1,5 @@
+import { genericArtifacts } from "./artifacts";
+
 export const locations = [
   {
     id: 1,
@@ -16,13 +18,14 @@ export const locations = [
     ID: {
       name: "Museum Seni Islam",
       description:
-        "Dirancang oleh arsitek legendaris I.M. Pei. Koleksinya mencakup manuskrip, keramik, tekstil, dan kaligrafi dari 3 benua.",
+        "Mahakarya arsitektur yang dirancang oleh arsitek pemenang Pritzker Prize, I.M. Pei. Museum ini berdiri megah di sebuah pulau buatan di lepas semenanjung Doha. Koleksinya membentang selama 1.400 tahun, mencakup karya seni yang menakjubkan berupa manuskrip langka, keramik presisi tinggi, tekstil, dan kaligrafi yang dikumpulkan dari 3 benua. Sebuah destinasi wajib untuk menyelami keharmonisan dan evolusi seni dunia Islam.",
     },
     EN: {
       name: "Museum of Islamic Art",
       description:
-        "Designed by the legendary architect I.M. Pei. The collection includes manuscripts, ceramics, textiles, and calligraphy from 3 continents.",
+        "An architectural masterpiece designed by Pritzker Prize-winning architect I.M. Pei, standing majestically on a purpose-built island off the Doha corniche. Its collection spans 1,400 years, encompassing awe-inspiring artworks including rare manuscripts, high-precision ceramics, textiles, and calligraphy gathered from 3 continents. It is a must-visit destination to immerse oneself in the harmony and evolution of Islamic world art.",
     },
+    artifacts: genericArtifacts,
   },
   {
     id: 2,
@@ -41,13 +44,14 @@ export const locations = [
     ID: {
       name: "Louvre Abu Dhabi",
       description:
-        "Memiliki galeri seni Islam dengan koleksi penting dari abad ke-7 hingga ke-19.",
+        "Lebih dari sekadar museum, ini adalah tengara budaya yang memadukan desain futuristik dengan warisan masa lalu. Memiliki galeri seni Islam khusus yang menyoroti perpaduan luar biasa peradaban global. Koleksinya menyimpan artefak penting dari abad ke-7 hingga ke-19, menggarisbawahi kontribusi yang tak terukur dari seni dan sains Islam terhadap warisan intelektual manusia.",
     },
     EN: {
       name: "Louvre Abu Dhabi",
       description:
-        "Features an Islamic art gallery with significant collections from the 7th to the 19th centuries.",
+        "More than just a museum, it is a cultural landmark that blends futuristic design with the heritage of the past. It features a dedicated Islamic art gallery highlighting the remarkable cross-pollination of global civilizations. The collection houses vital artifacts from the 7th to the 19th centuries, underscoring the immeasurable contributions of Islamic art and science to humanity's intellectual legacy.",
     },
+    artifacts: genericArtifacts,
   },
   {
     id: 3,
@@ -65,12 +69,15 @@ export const locations = [
     ],
     ID: {
       name: "Museum Seni Turki dan Islam",
-      description: "Terkenal dengan koleksi karpet Utsmani dan manuskrip langka.",
+      description:
+        "Terletak tepat di seberang Masjid Biru yang ikonik, museum ini menempati bekas istana Ibrahim Pasha (Wazir Agung Suleiman the Magnificent). Museum ini menyimpan koleksi karpet Utsmani terlengkap di dunia serta manuskrip-manuskrip berharga, kaligrafi, keramik, dan relikui keagamaan suci. Tata ruang historisnya menawarkan sekilas kehidupan Kesultanan Utsmaniyah pada puncaknya.",
     },
     EN: {
       name: "Museum of Turkish and Islamic Arts",
-      description: "Famous for its collection of Ottoman carpets and rare manuscripts.",
+      description:
+        "Located directly opposite the iconic Blue Mosque, the museum occupies the former palace of Ibrahim Pasha (Grand Vizier to Suleiman the Magnificent). It holds the world's most comprehensive collection of Ottoman carpets along with priceless manuscripts, calligraphy, ceramics, and sacred religious relics. Its historical setting offers a glimpse into the life of the Ottoman Empire at its zenith.",
     },
+    artifacts: genericArtifacts,
   },
   {
     id: 4,
@@ -88,12 +95,15 @@ export const locations = [
     ],
     ID: {
       name: "Museum Kesenian Islam Malaysia",
-      description: "Museum seni Islam terbesar di kawasan Asia Tenggara.",
+      description:
+        "Diakui sebagai museum seni Islam terbesar di wilayah Asia Tenggara, bangunan megah ini terletak di tengah hiruk-pikuk hijau di Kuala Lumpur. Fasilitas ini membanggakan ribuan artefak yang tidak hanya berfokus pada Timur Tengah tetapi juga menyoroti pusaka keislaman yang unik dari Tiongkok, India, dan Dunia Melayu. Pengalaman spiritual dan artistik yang menawan bagi setiap pengunjung.",
     },
     EN: {
       name: "Islamic Arts Museum Malaysia",
-      description: "The largest museum of Islamic arts in Southeast Asia.",
+      description:
+        "Recognized as the largest museum of Islamic arts in Southeast Asia, this magnificent building is nestled amidst the lush greenery of Kuala Lumpur. The facility boasts thousands of artifacts that not only focus on the Middle East but also highlight the unique Islamic scholarly heritage of China, India, and the Malay World. A truly captivating spiritual and artistic experience.",
     },
+    artifacts: genericArtifacts,
   },
   {
     id: 5,
@@ -111,12 +121,15 @@ export const locations = [
     ],
     ID: {
       name: "Museum Inggris (The British Museum)",
-      description: "Memiliki koleksi seni Islam dan Timur Tengah yang sangat komprehensif.",
+      description:
+        "Menyajikan salah satu tampilan paling komprehensif di dunia mengenai pencapaian peradaban. Galeri Seni Islam dan Timur Tengah yang dimilikinya memamerkan spektrum luas dari zaman kejayaan Islam, mulai dari astrolab kompleks, tembikar Andalusia, hingga ubin Iznik. Koleksi ini menjembatani benua dan menunjukkan kedalaman luar biasa interaksi budaya bersejarah.",
     },
     EN: {
       name: "The British Museum",
-      description: "Houses a highly comprehensive collection of Islamic and Middle Eastern art.",
+      description:
+        "Presenting one of the world's most comprehensive displays of human achievement. Its dedicated Islamic and Middle Eastern Art galleries exhibit a broad spectrum from the golden age of Islam, ranging from complex astrolabes, Andalusian pottery, to Iznik tiles. This collection bridges continents and demonstrates the extraordinary depth of historical cultural interaction.",
     },
+    artifacts: genericArtifacts,
   },
   {
     id: 6,
@@ -134,12 +147,15 @@ export const locations = [
     ],
     ID: {
       name: "Museum Seni Metropolitan",
-      description: "Sayap seni Islamnya sangat terkenal dengan rekonstruksi halaman Andalusia.",
+      description:
+        "Sayap seni Islam dari 'The Met' sangat dihormati secara global, menyuguhkan koleksi besar yang mencerminkan rentang geografis dan sejarah masyarakat Islam. Salah satu puncaknya adalah rekonstruksi asli dari pelataran Andalusia dengan ukiran rumit. Para kurator di sini berhasil menata pusaka kesenian dengan narasi visual yang seakan membawa pengunjung melintasi waktu.",
     },
     EN: {
       name: "The Metropolitan Museum of Art",
-      description: "Its Islamic art wing is highly renowned, featuring a reconstruction of an Andalusian courtyard.",
+      description:
+        "The Islamic art wing of 'The Met' is highly revered globally, presenting an immense collection that spans the geographic and historical breadth of Islamic societies. One of its highlights is an authentic, intricately carved reconstruction of an Andalusian courtyard. The curators have managed to arrange these artistic treasures with a visual narrative that transports visitors through time.",
     },
+    artifacts: genericArtifacts,
   },
   {
     id: 7,
@@ -157,12 +173,15 @@ export const locations = [
     ],
     ID: {
       name: "Museum Dar Si Said",
-      description: "Menampilkan koleksi seni dekoratif Islam khas Maroko.",
+      description:
+        "Oase kemegahan di jantung Marrakech. Museum ini bertempat di istana bersejarah yang menampilkan karya seni dekoratif Islam khas Maroko. Mulai dari ukiran kayu cedar yang halus, karpet Berber yang ditenun indah, perhiasan emas regional, hingga keramik tradisional. Arsitektur bangunannya sendiri merupakan mahakarya gaya Moor yang memanjakan mata.",
     },
     EN: {
       name: "Dar Si Said Museum",
-      description: "Features an extensive collection of traditional Moroccan Islamic decorative arts.",
+      description:
+        "An oasis of splendor in the heart of Marrakech. This museum is housed in a historic palace showcasing traditional Moroccan Islamic decorative arts. It features fine carved cedar wood, beautifully woven Berber carpets, regional gold jewelry, and traditional ceramics. The building's architecture itself is a feast for the eyes, epitomizing the Moorish mastercraft.",
     },
+    artifacts: genericArtifacts,
   },
   {
     id: 8,
@@ -179,12 +198,15 @@ export const locations = [
     ],
     ID: {
       name: "Museum Peradaban Islam Sharjah",
-      description: "Menampilkan penemuan sains, alat astronomi, dan kontribusi hebat ilmuwan Muslim.",
+      description:
+        "Terletak di sebelah kawasan pejalan kaki yang tenang, museum ini mempertemukan lebih dari 5.000 artefak dari seluruh dunia Islam. Koleksinya dengan brilian mendokumentasikan penemuan sains, instrumen astronomi mutakhir, manuskrip awal, dan koin prasejarah. Menawarkan penghargaan mendalam terhadap kontribusi tak tertandingi cendekiawan Muslim terhadap era Renaisans Eropa.",
     },
     EN: {
       name: "Sharjah Museum of Islamic Civilization",
-      description: "Exhibits scientific discoveries, astronomical tools, and the great contributions of Muslim scientists.",
+      description:
+        "Set alongside a tranquil promenade, this museum brings together over 5,000 artifacts from across the Islamic world. Its collections brilliantly document scientific discoveries, advanced astronomical instruments, early manuscripts, and historic coins. It offers a profound appreciation for the unparalleled contributions of Muslim scholars to the European Renaissance.",
     },
+    artifacts: genericArtifacts,
   },
   {
     id: 9,
@@ -203,11 +225,14 @@ export const locations = [
     ],
     ID: {
       name: "Museum Pergamon",
-      description: "Memiliki koleksi seni Islam yang sangat penting termasuk relik bersejarah Mshatta.",
+      description:
+        "Museum bersejarah di Museumsinsel Berlin ini menyimpan koleksi Seni Islam yang luar biasa vital. Relik paling terkenal yang ada di dalamnya adalah fasad Mshatta, ditarik dari struktur istana gurun Yordania abad ke-8. Ruangan Aleppo yang diukir rumit melengkapi sajian estetika memukau yang menangkap esensi dan keterampilan artistik dunia Arab kuno.",
     },
     EN: {
       name: "Pergamon Museum",
-      description: "Contains highly significant collections of Islamic art, including the historic Mshatta facade.",
+      description:
+        "This historic museum on Berlin's Museum Island holds a remarkably vital collection of Islamic art. Its most famous relic is the Mshatta facade, retrieved from an 8th-century Jordanian desert palace structure. The intricately carved Aleppo Room complements a breathtaking aesthetic offering that captures the essence and artistic skill of the ancient Arab world.",
     },
+    artifacts: genericArtifacts,
   },
 ];
