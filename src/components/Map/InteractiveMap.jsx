@@ -5,7 +5,10 @@ import {
   Marker,
   Popup,
   ZoomControl,
+  Polyline,
+  useMap
 } from "react-leaflet";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -53,7 +56,33 @@ const createCustomIcon = (imageUrl) => {
   });
 };
 
-const InteractiveMap = () => {
+const ThemeMapUpdater = ({ activeTheme }) => {
+  const map = useMap();
+
+  useEffect(() => {
+    if (activeTheme) {
+      // Temukan lokasi berdasarkan IDs
+      const themeLocations = activeTheme.locationIds
+        .map(id => locations.find(loc => loc.id === id))
+        .filter(Boolean);
+      
+      if (themeLocations.length > 0) {
+        const bounds = L.latLngBounds(themeLocations.map(loc => loc.position));
+        map.fitBounds(bounds, { padding: [60, 60], animate: true, duration: 1.5 });
+      }
+    } else {
+      // Reset view
+      map.flyTo(MAP_CENTER, MAP_ZOOM_LEVEL, { animate: true, duration: 1.5 });
+    }
+  }, [activeTheme, map]);
+
+  return null;
+};
+
+const InteractiveMap = ({ activeTheme }) => {
+  const themedLocations = activeTheme 
+    ? activeTheme.locationIds.map(id => locations.find(loc => loc.id === id)).filter(Boolean)
+    : [];
   return (
     /* =========================
        PENTING: HEIGHT WAJIB ADA
@@ -74,11 +103,32 @@ const InteractiveMap = () => {
 
         <ZoomControl position="bottomright" />
 
-        {locations.map((location) => (
+        <ThemeMapUpdater activeTheme={activeTheme} />
+
+        {/* Gambar rute polyline jika ada tema yang aktif */}
+        {activeTheme && themedLocations.length > 1 && (
+          <Polyline 
+            positions={themedLocations.map(loc => loc.position)} 
+            pathOptions={{ 
+              color: activeTheme.color, 
+              weight: 4, 
+              opacity: 0.8, 
+              dashArray: "10, 10" 
+            }} 
+          />
+        )}
+
+        {locations.map((location) => {
+          // Jika ada tema aktif, buat sedikit pudar/transparan marker yang tidak relevan
+          const isThemed = activeTheme ? activeTheme.locationIds.includes(location.id) : true;
+          
+          return (
           <Marker
             key={location.id}
             position={location.position}
             icon={createCustomIcon(location.imageUrl)}
+            opacity={isThemed ? 1 : 0.4}
+            zIndexOffset={isThemed ? 1000 : 0}
           >
             <Popup>
               <div style={{ width: "200px" }}>
@@ -129,7 +179,7 @@ const InteractiveMap = () => {
               </div>
             </Popup>
           </Marker>
-        ))}
+        )})}
       </MapContainer>
     </div>
   );
