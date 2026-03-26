@@ -31,9 +31,9 @@ const ArtikelCard = ({ id, image, category, title, desc, date, language }) => {
             {category}
           </p>
 
-          <h3 className="text-xl font-semibold mt-3 mb-3">{title}</h3>
+          <h3 className="text-xl font-semibold mt-3 mb-3 dark:text-ethereal-white">{title}</h3>
 
-          <p className="text-gray-600">{desc}</p>
+          <p className="text-gray-600 dark:text-gray-200">{desc}</p>
 
           <div className="mt-6 flex justify-between text-sm text-gray-500">
             <div className="flex items-center gap-2">

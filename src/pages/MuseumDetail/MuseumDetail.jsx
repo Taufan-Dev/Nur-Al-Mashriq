@@ -183,7 +183,6 @@ const MuseumDetail = () => {
         {/* VIEW TOGGLE */}
         <div className="mt-16 mb-8 flex flex-col md:flex-row items-center justify-between border-b border-prestige-gold/20 pb-6 gap-4">
           <h2 className="text-3xl font-black text-forest dark:text-ethereal-white flex items-center gap-3">
-             <span className="material-symbols-outlined text-prestige-gold text-4xl">museum</span>
             {language === "ID" ? "Jelajahi Koleksi" : "Explore Collections"}
           </h2>
           <div className="glass-crystal inline-flex p-1 rounded-full border border-prestige-gold/30 bg-white/50 dark:bg-light-dark/50 shadow-sm relative z-20">
