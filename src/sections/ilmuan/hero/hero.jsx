@@ -2,7 +2,7 @@ import React from "react";
 import { useLanguage } from "../../../context/LanguageContext";
 import { FiSearch } from "react-icons/fi";
 
-const Hero = () => {
+const Hero = ({ searchQuery, setSearchQuery }) => {
   const { language } = useLanguage();
 
   const content = {
@@ -42,7 +42,7 @@ const Hero = () => {
 
       <div className="max-w-7xl w-full px-6 md:px-12 flex flex-col justify-center items-start pt-10 relative z-10">
         <div className="max-w-4xl">
-          <h1 className="text-xl md:text-3xl lg:text-5xl font-sans font-black tracking-tighter text-[#2a261f] dark:text-ethereal-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-sans font-black tracking-tighter text-[#2a261f] dark:text-ethereal-white mb-6 leading-tight">
             {text.title1}
             <span className="text-prestige-gold">{text.title2}</span>
           </h1>
@@ -59,6 +59,8 @@ const Hero = () => {
               type="text"
               className="w-full pl-14 pr-6 py-4 rounded-lg border border-prestige-gold bg-white dark:bg-light-dark text-forest dark:text-ethereal-white placeholder:text-gray-400 focus:outline-none focus:border-prestige-gold focus:ring-1 focus:ring-prestige-gold transition-colors font-sans text-lg shadow-sm"
               placeholder={text.placeholder}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
         </div>

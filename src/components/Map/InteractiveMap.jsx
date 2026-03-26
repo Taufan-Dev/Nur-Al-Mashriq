@@ -12,6 +12,7 @@ import L from "leaflet";
 
 import { locations } from "../../data/locations";
 import { MAP_CENTER, MAP_ZOOM_LEVEL } from "../../utils/constants";
+import { useLanguage } from "../../context/LanguageContext";
 
 /* =========================
    FIX ICON BUG VITE
@@ -54,11 +55,30 @@ const createCustomIcon = (imageUrl) => {
 };
 
 const InteractiveMap = () => {
+  const { language } = useLanguage();
+  const [showOverlay, setShowOverlay] = React.useState(true);
+
   return (
     /* =========================
        PENTING: HEIGHT WAJIB ADA
     ========================= */
-    <div className="w-full h-screen relative z-0">
+    <div 
+      className="w-full h-[600px] relative z-0 overflow-hidden"
+    >
+      {/* Black transparent overlay instruction */}
+      {showOverlay && (
+        <div 
+          className="absolute inset-0 z-1000 bg-black/60 flex items-center justify-center cursor-pointer transition-opacity duration-300"
+          onClick={() => setShowOverlay(false)}
+          onTouchStart={() => setShowOverlay(false)}
+          onWheel={() => setShowOverlay(false)}
+        >
+          <div className="text-white text-xl md:text-2xl font-bold flex flex-col items-center gap-3 animate-pulse pointer-events-none">
+            <span className="text-4xl">👆</span>
+            {language === 'ID' ? 'Tekan atau klik untuk mulai berinteraksi' : 'Tap or click to explore'}
+          </div>
+        </div>
+      )}
       <MapContainer
         center={MAP_CENTER}
         zoom={MAP_ZOOM_LEVEL}
@@ -99,7 +119,7 @@ const InteractiveMap = () => {
                     marginTop: "10px",
                   }}
                 >
-                  {location.name}
+                  {location[language]?.name || location.EN.name}
                 </h3>
 
                 <p
@@ -108,7 +128,7 @@ const InteractiveMap = () => {
                     marginTop: "5px",
                   }}
                 >
-                  {location.description.substring(0, 80)}...
+                  {(location[language]?.description || location.EN.description).substring(0, 80)}...
                 </p>
 
                 <Link
@@ -117,7 +137,7 @@ const InteractiveMap = () => {
                     display: "inline-block",
                     marginTop: "10px",
                     padding: "6px 10px",
-                    backgroundColor: "#4f46e5",
+                    backgroundColor: "#c5a059",
                     color: "white",
                     borderRadius: "6px",
                     textDecoration: "none",

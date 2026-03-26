@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { locations } from "../../data/locations";
+import { useLanguage } from "../../context/LanguageContext";
 
 const MuseumDetail = () => {
   const { id } = useParams();
+  const { language } = useLanguage();
   const museumId = parseInt(id, 10);
   const location = locations.find((loc) => loc.id === museumId);
 
@@ -45,32 +47,36 @@ const MuseumDetail = () => {
   if (!location) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h2 className="text-2xl font-bold mb-4">Museum Tidak Ditemukan</h2>
+        <h2 className="text-2xl font-bold mb-4">
+          {language === "ID" ? "Museum Tidak Ditemukan" : "Museum Not Found"}
+        </h2>
         <Link to="/" className="text-indigo-600 underline">
-          Kembali ke Beranda
+          {language === "ID" ? "Kembali ke Beranda" : "Back to Home"}
         </Link>
       </div>
     );
   }
+
+  const locData = location[language] || location.EN;
 
   return (
     <div className="min-h-screen bg-slate-50 pb-20 relative">
       {/* Header */}
       <header className="p-6">
         <Link
-          to="/"
-          className="text-indigo-700 font-semibold hover:text-indigo-500"
+          to="/maps"
+          className="text-prestige-gold font-semibold hover:text-prestige-gold/80 transition-colors"
         >
-          ← Kembali
+          ← {language === "ID" ? "Kembali" : "Back"}
         </Link>
       </header>
 
       {/* Content */}
       <section className="max-w-6xl mx-auto px-6 py-10">
-        <h1 className="text-4xl font-bold mb-4">{location.name}</h1>
+        <h1 className="text-4xl font-bold mb-4 text-[#2a261f]">{locData.name}</h1>
 
         <p className="text-gray-700 text-lg leading-relaxed mb-10">
-          {location.description}
+          {locData.description}
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10 animate-fade-in">
@@ -78,7 +84,7 @@ const MuseumDetail = () => {
           <div className="w-full h-full">
             <img
               src={location.imageUrl}
-              alt={location.name}
+              alt={locData.name}
               className="w-full h-full object-cover rounded-xl shadow-md"
             />
           </div>
@@ -94,7 +100,7 @@ const MuseumDetail = () => {
               <img
                 key={index}
                 src={imgSrc}
-                alt={`${location.name} - Galeri ${index + 1}`}
+                alt={`${locData.name} - Galeri ${index + 1}`}
                 className="w-full aspect-square object-cover rounded-xl shadow-md bg-gray-200"
               />
             ))}
@@ -103,12 +109,14 @@ const MuseumDetail = () => {
 
         {location.panoramaUrl && (
           <div className="mt-12">
-            <h2 className="text-3xl font-bold mb-6">Tur Virtual 360°</h2>
+            <h2 className="text-3xl font-bold mb-6 text-[#2a261f]">
+              {language === "ID" ? "Tur Virtual 360°" : "360° Virtual Tour"}
+            </h2>
             <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-xl border bg-gray-900">
               <div id="panorama-viewer" className="w-full h-full"></div>
 
               <div className="absolute top-4 right-4 bg-black/60 text-white text-xs px-4 py-2 rounded-full backdrop-blur-sm shadow-lg border border-white/10 flex items-center gap-2">
-                <span>🖐️</span> Geser untuk melihat sekeliling
+                <span>🖐️</span> {language === "ID" ? "Geser untuk melihat sekeliling" : "Click and drag to look around"}
               </div>
             </div>
           </div>

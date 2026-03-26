@@ -56,14 +56,30 @@ const ScientistCard = ({ scientist, language }) => {
   );
 };
 
-const CardList = () => {
+const CardList = ({ searchQuery = "" }) => {
   const { language } = useLanguage();
   const [showAll, setShowAll] = useState(false);
 
+  // Filter data based on search query
+  const filteredScientists = scientistsData.filter((scientist) => {
+    if (!searchQuery) return true;
+    const query = searchQuery.toLowerCase();
+    
+    // Check fields using the currently selected language, or check both
+    const nameMatch = scientist.name.toLowerCase().includes(query);
+    const descMatchEn = scientist.EN?.shortDescription?.toLowerCase().includes(query) || false;
+    const descMatchId = scientist.ID?.shortDescription?.toLowerCase().includes(query) || false;
+    const fieldMatchEn = scientist.EN?.fields?.some(field => field.toLowerCase().includes(query)) || false;
+    const fieldMatchId = scientist.ID?.fields?.some(field => field.toLowerCase().includes(query)) || false;
+    const eraMatch = scientist.era?.toLowerCase().includes(query) || false;
+    
+    return nameMatch || descMatchEn || descMatchId || fieldMatchEn || fieldMatchId || eraMatch;
+  });
+
   // Tampilkan max 6 kalau tidak showAll
   const displayedScientists = showAll
-    ? scientistsData
-    : scientistsData.slice(0, 6);
+    ? filteredScientists
+    : filteredScientists.slice(0, 6);
 
   const buttonText =
     language === "ID"
@@ -89,7 +105,7 @@ const CardList = () => {
         </div>
 
         {/* Show More Button */}
-        {scientistsData.length > 6 && (
+        {filteredScientists.length > 6 && (
           <div className="mt-16 md:mt-20">
             <button
               onClick={() => setShowAll(!showAll)}
